@@ -5,7 +5,7 @@
     <h1>{{ post.title }}</h1>
     <small>
         {{ post.created_on.date }} |&nbsp;
-        РљР°С‚РµРіРѕСЂРёРё:&nbsp;
+        Категории:&nbsp;
         {% for category in post.categories.all %}
         <a href="">
             {{ category.name }}
