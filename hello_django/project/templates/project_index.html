@@ -2,7 +2,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block page_content %}
-<h1>Мои проекты‹</h1>
+<h1>Мои проекты</h1>
 <div class="row">
 {% for project in projects %}
     <div class="col-md-4">
@@ -13,7 +13,7 @@
                 <p class="card-text">{{ project.description }}</p>
                 <a href="{% url 'project_detail' project.pk %}"
                    class="btn btn-primary">
-                    РџРѕРґСЂРѕР±РЅРµРµ
+                    Подробнее
                 </a>
             </div>
         </div>
