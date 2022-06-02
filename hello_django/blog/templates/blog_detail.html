@@ -27,7 +27,7 @@
     <h3>Коментарии:</h3>
     {% for comment in comments %}
     <p>
-        {{ comment.created_on.date }}
+        {{ comment.created_on.date }} |&nbsp;
         <b>{{ comment.author }}</b> оставил комментарий:
     </p>
     <p>{{ comment.body }}</p>
