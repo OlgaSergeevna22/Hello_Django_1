@@ -28,13 +28,16 @@
                   <input type="submit" name="send" value="Узнать" class="mt-2 btn btn-danger">
                  </form>
 
-             <div class="col-5 offset-1">
+             <div class="col-8 offset-3">
          <h1>Информация</h1>
-         <div class="alert alert-danger">
-             <div class="alert alert-danger">
-                 <b>Город:</b>{{info.city}}<br>
-                 <b>Температура:</b>{{info.temp}}<sup>1</sup><br>
-                 <img src="http://openweathermap.org/img/w{{info.icon}}.png" alt="Фото погоды" class="img-thunbnail">
+         <div class="alert alert-info">
+             <div class="row">
+                 <div class="col-9">
+                   <b>Город:</b>{{info.city}}<br>
+                   <b>Температура:</b>{{info.temp}}<sup>0</sup><br>
+                 </div>
+                 <div class="col-2 offset-1">
+                 <img src="http://openweathermap.org/img/w{{ info.icon }}.png" alt="Фото погоды" >
              </div>
          </div>
      </div>

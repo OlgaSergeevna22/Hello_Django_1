@@ -10,8 +10,8 @@ def index(request):
     res = requests.get(url.format(city)).json()
     city_info = {
         'city':city,
-        'temp':['main','temp'],
-        'icon':['weather',0,'icon'],
+        'temp':res['main']['temp'],
+        'icon':res['weather'][0]['icon']
     }
     context = {'info':city_info}
     return render(request, 'weather/index.html', context)
