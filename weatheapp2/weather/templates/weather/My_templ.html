@@ -1,6 +1,35 @@
 <!doctype html>
 <html lang="ru">
 <head>
+
+    <script>
+  var months = new Array(13);
+  months[1]="января"; months[2]="февраля"; months[3]="марта"; months[4]="апреля"; months[5]="мая"; months[6]="июня"; months[7]="июля"; months[8]="августа"; months[9]="сентября"; months[10]="октября"; months[11]="ноября"; months[12]="декабря";
+
+  var time = new Date();
+  var thismonth = months[time.getMonth() + 1];
+  var date = time.getDate();
+  var thisyear = time.getYear();
+  var day = time.getDay() + 1;
+
+  if (thisyear < 2000)
+      thisyear = thisyear + 1900;
+  if (day == 1) DayofWeek = "Воскресенье";
+  if (day == 2) DayofWeek = "Понедельник";
+  if (day == 3) DayofWeek = "Вторник";
+  if (day == 4) DayofWeek = "Среда";
+  if (day == 5) DayofWeek = "Четверг";
+  if (day == 6) DayofWeek = "Пятница";
+  if (day == 7) DayofWeek = "Суббота";
+</script>
+
+<script>
+setInterval(function() {
+  var cd = new Date();
+  var clockdat = document.getElementById("clockdat");
+  clockdat.innerHTML = cd.toLocaleTimeString();
+}, 1000);
+</script>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -24,6 +53,16 @@
 
 </style>
 <body style='background-color: rgb(176, 224, 230)'>
+ <div class="center" style="background-color: #3b424a; padding:5px;">
+  <span style="color:aqua">Сегодня:</span>
+  <span style="color:silver; font-size:14px;">
+  <script>
+      document.write(date+" ");
+      document.write(thismonth+ " "+thisyear+" "+"года"+" — "+ DayofWeek);
+  </script>
+  (<span id="clockdat" style="color:aqua;"></span>)
+  </span>
+</div>
      <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
       <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
         <span class="fs-4">IT-overone</span>
@@ -63,5 +102,6 @@
          </div>
      </div>
 <img src="C:/Users/Ольга/PycharmProjects/Hello_Django_1/weatheapp2/weather/static/img/sun.gif">
+
 </body>
 </html>
