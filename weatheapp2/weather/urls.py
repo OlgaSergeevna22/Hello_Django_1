@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.index),
+    path('home/', views.My_templ),
 
 ]
 
