@@ -11,7 +11,7 @@ def index(request):
         form = CityForm(request.POST)
         form.save()
 
-    form = CityForm
+    form = CityForm()
 
 
     cities = City.objects.all()
@@ -35,7 +35,7 @@ def My_templ(request):
     url = 'https://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid='+appid
 
 
-    city = 'Brest'
+    cities = City.objects.all()
     res = requests.get(url.format(city)).json()
     city_info = {
         'city':city,
