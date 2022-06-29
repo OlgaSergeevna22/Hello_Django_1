@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="ru">
 <head>
 
@@ -74,18 +73,28 @@ setInterval(function() {
         <a class="me-3 py-2 text-dark text-decoration-none" href="#">Информация</a>
       </nav>
     </div>
+
      <div class="container mt-5">
+         <div class= "col-1 offset-9">
+    <img src="https://flyclipart.com/thumb2/clip-art-of-a-sun-840738.png" width="255" height="255" alt="lorem">
+
+</div>
+
          <div class="row">
+
              <div class="col-5 offset-1">
                  <form action="">
+
                      <font size="4" color="Blue" face="comic sans ms" >Город</font>
                   <input type="text" id="city" class="form-control" name="city" placeholder="Введите город">
                   <input type="submit" name="send" value="Узнать" class="sub"  >
+
                  </form>
 
              <div class="col-10 offset-3">
                  <font size="5" color="Indigo" face="comic sans ms">Информация</font>
 
+          {% for info in all_info %}
          <div class="alert alert-primary">
              <div class="row">
                  <div class="col-9">
@@ -99,10 +108,11 @@ setInterval(function() {
              </div>
          </div>
      </div>
+                 {% endfor %}
              </div>
          </div>
      </div>
-<img src="C:/Users/Ольга/PycharmProjects/Hello_Django_1/weatheapp2/weather/static/img/sun.gif">
+
 
 </body>
 
