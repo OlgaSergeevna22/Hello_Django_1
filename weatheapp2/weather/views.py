@@ -19,6 +19,8 @@ def index(request):
     all_cities=[]
     hist_cities = []
 
+
+
     for city in cities:
         res = requests.get(url.format(city)).json()
         city_info = {
@@ -35,7 +37,9 @@ def index(request):
             'speed': res['wind']['speed'],
             'cloud': res['clouds']['all']
         }
+
         hist_cities.append(hist_info)
+
 
     all_cities.append(city_info)
 
@@ -43,7 +47,7 @@ def index(request):
     context = {'all_info':all_cities, 'hist_info':hist_cities, 'form':form}
     return render(request, 'weather/index.html', context)
 
-    #
+
 
 
 
