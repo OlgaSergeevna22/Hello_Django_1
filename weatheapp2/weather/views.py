@@ -14,20 +14,37 @@ def index(request):
     form = CityForm()
 
 
+
     cities = City.objects.all()
     all_cities=[]
+    hist_cities = []
+
     for city in cities:
         res = requests.get(url.format(city)).json()
         city_info = {
             'city':city.name,
             'temp':res['main']['temp'],
-            'icon':res['weather'][0]['icon']
+            'icon':res['weather'][0]['icon'],
+            'speed': res['wind']['speed'],
+            'cloud': res['clouds']['all']
     }
-        all_cities.append(city_info)
+        hist_info = {
+            'city': city.name,
+            'temp': res['main']['temp'],
+            'icon': res['weather'][0]['icon'],
+            'speed': res['wind']['speed'],
+            'cloud': res['clouds']['all']
+        }
+        hist_cities.append(hist_info)
+
+    all_cities.append(city_info)
 
 
-    context = {'all_info':all_cities, 'form':form}
+    context = {'all_info':all_cities, 'hist_info':hist_cities, 'form':form}
     return render(request, 'weather/index.html', context)
+
+    #
+
 
 
 def My_templ(request):

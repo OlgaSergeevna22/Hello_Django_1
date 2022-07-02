@@ -9,3 +9,4 @@ class CityForm(ModelForm):
                                     'class':'form-control',
                                     'name':'city',
                                     'placeholder':'Введите город'})}
+
